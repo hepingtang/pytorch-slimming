@@ -32,19 +32,19 @@ python main.py
 ## Trained with Sparsity
 
 ```shell
-python main.py -sr --s 0.0001
+python main.py -sr --s 0.0001 #1训练并且加入L1正则化
 ```
 
 ## Pruned
 
 ```shell
-python prune.py --model model_best.pth.tar --save pruned.pth.tar --percent 0.7
+python prune.py --model model_best.pth.tar --save pruned.pth.tar --percent 0.7  #2进行剪枝惭怍： 队训练好的模型进行剪枝，并保存 百分多少的参数
 ```
 
 ## Fine-tuned
 
 ```shell
-python main.py -refine pruned.pth.tar --epochs 40
+python main.py -refine pruned.pth.tar --epochs 40 #3 再训练剪枝好的模型 进行微调
 ```
 
 ## Reference
